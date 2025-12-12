@@ -123,17 +123,23 @@ def main():
     # Footer
     st.markdown("---")
     
-    # Add link to interactive map
+    # Embedded Interactive Map Section
     st.subheader("🗺️ Interactive Taiwan Weather Map")
     st.markdown("""
-    View weather locations on an interactive map with temperature time-series charts!
-    """)    
+    Click on any location marker to view detailed temperature forecasts and trends.
+    """)
     
-    col1, col2 = st.columns(2)
-    with col1:
-        st.link_button("🌐 Open Interactive Map", "http://localhost:8000/map.html", type="primary")
-    with col2:
-        st.link_button("📱 Open Standalone Map", "map_standalone.html", type="secondary", help="No server needed - can be opened directly")
+    # Check if map data exists
+    if os.path.exists('map_standalone.html'):
+        # Read the standalone map HTML
+        with open('map_standalone.html', 'r', encoding='utf-8') as f:
+            map_html = f.read()
+        
+        # Embed the map in Streamlit using components
+        import streamlit.components.v1 as components
+        components.html(map_html, height=800, scrolling=True)
+    else:
+        st.warning("Map file not found. Please run `python data_export.py` to generate the map.")
     
     st.markdown("---")
     st.caption("Data source: Taiwan Central Weather Administration (CWA) OpenData API")
