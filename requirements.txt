@@ -1,0 +1,4 @@
+requests
+streamlit
+urllib3
+pandas

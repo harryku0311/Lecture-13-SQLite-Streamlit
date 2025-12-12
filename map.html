@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Taiwan Weather Map - Interactive Temperature Visualization</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Leaflet CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+    
+    <!-- Leaflet JS -->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    
+    <style>
+        .pulse {
+            animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+        }
+        
+        @keyframes pulse {
+            0%, 100% {
+                opacity: 1;
+            }
+            50% {
+                opacity: .5;
+            }
+        }
+        
+        .marker-selected {
+            filter: drop-shadow(0 0 10px rgba(59, 130, 246, 0.8));
+        }
+    </style>
+</head>
+<body class="bg-gradient-to-br from-blue-50 via-white to-green-50 min-h-screen">
+    <!-- Header -->
+    <header class="bg-white shadow-md">
+        <div class="container mx-auto px-4 py-6">
+            <h1 class="text-4xl font-bold text-gray-800 flex items-center gap-3">
+                <span class="text-5xl">🌤️</span>
+                <span class="bg-gradient-to-r from-blue-600 to-green-600 bg-clip-text text-transparent">
+                    Taiwan Weather Map
+                </span>
+            </h1>
+            <p class="text-gray-600 mt-2 text-lg">Interactive temperature visualization across Taiwan regions</p>
+        </div>
+    </header>
+    
+    <!-- Main Content -->
+    <main class="container mx-auto px-4 py-8">
+        <!-- Instructions -->
+        <div class="bg-blue-50 border-l-4 border-blue-500 p-4 mb-6 rounded-r-lg">
+            <p class="text-blue-800">
+                <span class="font-semibold">💡 How to use:</span> Click on any location marker on the map to view detailed temperature forecasts and trends.
+            </p>
+        </div>
+        
+        <!-- Loading State -->
+        <div id="loading" class="text-center py-12">
+            <div class="inline-block animate-spin rounded-full h-16 w-16 border-b-4 border-blue-600"></div>
+            <p class="mt-4 text-gray-600 text-lg">Loading weather data...</p>
+        </div>
+        
+        <!-- Content (hidden until loaded) -->
+        <div id="content" class="hidden">
+            <!-- Map Container -->
+            <div class="bg-white rounded-2xl shadow-xl overflow-hidden mb-8">
+                <div class="p-6 bg-gradient-to-r from-blue-600 to-blue-700">
+                    <h2 class="text-2xl font-bold text-white flex items-center gap-2">
+                        <span>🗺️</span>
+                        <span>Taiwan Regions</span>
+                    </h2>
+                    <p class="text-blue-100 mt-1">Click markers to view temperature data</p>
+                </div>
+                <div id="map" class="w-full h-[600px]"></div>
+            </div>
+            
+            <!-- Selected Location Info -->
+            <div id="locationInfo" class="hidden bg-white rounded-2xl shadow-xl overflow-hidden mb-8">
+                <div class="p-6 bg-gradient-to-r from-green-600 to-green-700">
+                    <h2 class="text-2xl font-bold text-white flex items-center gap-2">
+                        <span>📍</span>
+                        <span id="selectedLocationName">Select a location</span>
+                    </h2>
+                    <p class="text-green-100 mt-1" id="selectedLocationCity"></p>
+                </div>
+                
+                <!-- Temperature Stats -->
+                <div class="p-6 grid grid-cols-1 md:grid-cols-3 gap-4">
+                    <div class="bg-gradient-to-br from-red-50 to-orange-50 rounded-xl p-4 border border-red-200">
+                        <div class="text-red-600 text-sm font-semibold mb-1">Average Temperature</div>
+                        <div class="text-3xl font-bold text-red-700" id="avgTemp">--°C</div>
+                    </div>
+                    <div class="bg-gradient-to-br from-orange-50 to-yellow-50 rounded-xl p-4 border border-orange-200">
+                        <div class="text-orange-600 text-sm font-semibold mb-1">Highest Expected</div>
+                        <div class="text-3xl font-bold text-orange-700" id="maxTemp">--°C</div>
+                    </div>
+                    <div class="bg-gradient-to-br from-blue-50 to-cyan-50 rounded-xl p-4 border border-blue-200">
+                        <div class="text-blue-600 text-sm font-semibold mb-1">Lowest Expected</div>
+                        <div class="text-3xl font-bold text-blue-700" id="minTemp">--°C</div>
+                    </div>
+                </div>
+                
+                <!-- Chart Container -->
+                <div class="p-6 bg-gray-50">
+                    <h3 class="text-xl font-bold text-gray-800 mb-4 flex items-center gap-2">
+                        <span>📊</span>
+                        <span>Temperature Trends</span>
+                    </h3>
+                    <div class="bg-white rounded-xl p-4 shadow-inner">
+                        <canvas id="temperatureChart"></canvas>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Error State -->
+        <div id="error" class="hidden bg-red-50 border-l-4 border-red-500 p-6 rounded-r-lg">
+            <h3 class="text-red-800 font-bold text-xl mb-2">⚠️ Error Loading Data</h3>
+            <p class="text-red-700" id="errorMessage"></p>
+            <p class="text-red-600 mt-3">Please ensure weather_data.json exists. Run: <code class="bg-red-100 px-2 py-1 rounded">python data_export.py</code></p>
+        </div>
+    </main>
+    
+    <!-- Footer -->
+    <footer class="bg-white shadow-md mt-12">
+        <div class="container mx-auto px-4 py-6 text-center">
+            <p class="text-gray-600">
+                Data source: Taiwan Central Weather Administration (CWA) OpenData API
+            </p>
+            <p class="text-gray-500 text-sm mt-2">
+                Generated: <span id="generatedTime">--</span>
+            </p>
+        </div>
+    </footer>
+    
+    <!-- Load Map Script -->
+    <script src="map.js"></script>
+</body>
+</html>

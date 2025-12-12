@@ -1,0 +1,359 @@
+{
+  "generated_at": "2025-12-12T14:25:56.766418",
+  "locations": [
+    {
+      "name": "中部地區",
+      "city": "Taichung",
+      "lat": 24.1477,
+      "lon": 120.6736,
+      "avg_temp": 25.7,
+      "forecast_count": 7,
+      "forecasts": [
+        {
+          "date": "2025-12-03",
+          "weather": "多雲時晴",
+          "max_temp": 24.0,
+          "min_temp": 16.0,
+          "fetch_time": "2025-12-03 02:32:06"
+        },
+        {
+          "date": "2025-12-04",
+          "weather": "晴時多雲",
+          "max_temp": 25.0,
+          "min_temp": 15.0,
+          "fetch_time": "2025-12-03 02:32:06"
+        },
+        {
+          "date": "2025-12-05",
+          "weather": "晴時多雲",
+          "max_temp": 26.0,
+          "min_temp": 16.0,
+          "fetch_time": "2025-12-03 02:32:06"
+        },
+        {
+          "date": "2025-12-06",
+          "weather": "晴時多雲",
+          "max_temp": 26.0,
+          "min_temp": 16.0,
+          "fetch_time": "2025-12-03 02:32:06"
+        },
+        {
+          "date": "2025-12-07",
+          "weather": "晴時多雲",
+          "max_temp": 27.0,
+          "min_temp": 16.0,
+          "fetch_time": "2025-12-03 02:32:06"
+        },
+        {
+          "date": "2025-12-08",
+          "weather": "晴時多雲",
+          "max_temp": 26.0,
+          "min_temp": 16.0,
+          "fetch_time": "2025-12-03 02:32:06"
+        },
+        {
+          "date": "2025-12-09",
+          "weather": "晴時多雲",
+          "max_temp": 26.0,
+          "min_temp": 17.0,
+          "fetch_time": "2025-12-03 02:32:06"
+        }
+      ]
+    },
+    {
+      "name": "北部地區",
+      "city": "Taipei",
+      "lat": 25.033,
+      "lon": 121.5654,
+      "avg_temp": 22.7,
+      "forecast_count": 7,
+      "forecasts": [
+        {
+          "date": "2025-12-03",
+          "weather": "陰時多雲有雨",
+          "max_temp": 21.0,
+          "min_temp": 15.0,
+          "fetch_time": "2025-12-03 02:32:06"
+        },
+        {
+          "date": "2025-12-04",
+          "weather": "多雲短暫雨",
+          "max_temp": 21.0,
+          "min_temp": 14.0,
+          "fetch_time": "2025-12-03 02:32:06"
+        },
+        {
+          "date": "2025-12-05",
+          "weather": "多雲短暫雨",
+          "max_temp": 23.0,
+          "min_temp": 15.0,
+          "fetch_time": "2025-12-03 02:32:06"
+        },
+        {
+          "date": "2025-12-06",
+          "weather": "晴時多雲",
+          "max_temp": 24.0,
+          "min_temp": 15.0,
+          "fetch_time": "2025-12-03 02:32:06"
+        },
+        {
+          "date": "2025-12-07",
+          "weather": "晴時多雲",
+          "max_temp": 24.0,
+          "min_temp": 15.0,
+          "fetch_time": "2025-12-03 02:32:06"
+        },
+        {
+          "date": "2025-12-08",
+          "weather": "多雲短暫雨",
+          "max_temp": 23.0,
+          "min_temp": 16.0,
+          "fetch_time": "2025-12-03 02:32:06"
+        },
+        {
+          "date": "2025-12-09",
+          "weather": "多雲短暫雨",
+          "max_temp": 23.0,
+          "min_temp": 17.0,
+          "fetch_time": "2025-12-03 02:32:06"
+        }
+      ]
+    },
+    {
+      "name": "南部地區",
+      "city": "Tainan",
+      "lat": 22.9908,
+      "lon": 120.2133,
+      "avg_temp": 26.7,
+      "forecast_count": 7,
+      "forecasts": [
+        {
+          "date": "2025-12-03",
+          "weather": "多雲時晴",
+          "max_temp": 27.0,
+          "min_temp": 18.0,
+          "fetch_time": "2025-12-03 02:32:06"
+        },
+        {
+          "date": "2025-12-04",
+          "weather": "晴時多雲",
+          "max_temp": 25.0,
+          "min_temp": 16.0,
+          "fetch_time": "2025-12-03 02:32:06"
+        },
+        {
+          "date": "2025-12-05",
+          "weather": "晴時多雲",
+          "max_temp": 26.0,
+          "min_temp": 18.0,
+          "fetch_time": "2025-12-03 02:32:06"
+        },
+        {
+          "date": "2025-12-06",
+          "weather": "晴時多雲",
+          "max_temp": 27.0,
+          "min_temp": 18.0,
+          "fetch_time": "2025-12-03 02:32:06"
+        },
+        {
+          "date": "2025-12-07",
+          "weather": "晴時多雲",
+          "max_temp": 28.0,
+          "min_temp": 18.0,
+          "fetch_time": "2025-12-03 02:32:06"
+        },
+        {
+          "date": "2025-12-08",
+          "weather": "晴時多雲",
+          "max_temp": 27.0,
+          "min_temp": 19.0,
+          "fetch_time": "2025-12-03 02:32:06"
+        },
+        {
+          "date": "2025-12-09",
+          "weather": "晴時多雲",
+          "max_temp": 27.0,
+          "min_temp": 19.0,
+          "fetch_time": "2025-12-03 02:32:06"
+        }
+      ]
+    },
+    {
+      "name": "東北部地區",
+      "city": "Yilan",
+      "lat": 24.7736,
+      "lon": 121.758,
+      "avg_temp": 21.0,
+      "forecast_count": 7,
+      "forecasts": [
+        {
+          "date": "2025-12-03",
+          "weather": "陰有雨",
+          "max_temp": 20.0,
+          "min_temp": 16.0,
+          "fetch_time": "2025-12-03 02:32:06"
+        },
+        {
+          "date": "2025-12-04",
+          "weather": "陰短暫雨",
+          "max_temp": 19.0,
+          "min_temp": 16.0,
+          "fetch_time": "2025-12-03 02:32:06"
+        },
+        {
+          "date": "2025-12-05",
+          "weather": "陰短暫雨",
+          "max_temp": 20.0,
+          "min_temp": 17.0,
+          "fetch_time": "2025-12-03 02:32:06"
+        },
+        {
+          "date": "2025-12-06",
+          "weather": "多雲時陰短暫雨",
+          "max_temp": 22.0,
+          "min_temp": 17.0,
+          "fetch_time": "2025-12-03 02:32:06"
+        },
+        {
+          "date": "2025-12-07",
+          "weather": "多雲短暫雨",
+          "max_temp": 23.0,
+          "min_temp": 18.0,
+          "fetch_time": "2025-12-03 02:32:06"
+        },
+        {
+          "date": "2025-12-08",
+          "weather": "陰短暫雨",
+          "max_temp": 21.0,
+          "min_temp": 18.0,
+          "fetch_time": "2025-12-03 02:32:06"
+        },
+        {
+          "date": "2025-12-09",
+          "weather": "多雲時陰短暫雨",
+          "max_temp": 22.0,
+          "min_temp": 18.0,
+          "fetch_time": "2025-12-03 02:32:06"
+        }
+      ]
+    },
+    {
+      "name": "東南部地區",
+      "city": "Taitung",
+      "lat": 22.7583,
+      "lon": 121.1444,
+      "avg_temp": 24.0,
+      "forecast_count": 7,
+      "forecasts": [
+        {
+          "date": "2025-12-03",
+          "weather": "陰天",
+          "max_temp": 24.0,
+          "min_temp": 19.0,
+          "fetch_time": "2025-12-03 02:32:06"
+        },
+        {
+          "date": "2025-12-04",
+          "weather": "多雲",
+          "max_temp": 22.0,
+          "min_temp": 18.0,
+          "fetch_time": "2025-12-03 02:32:06"
+        },
+        {
+          "date": "2025-12-05",
+          "weather": "多雲時晴",
+          "max_temp": 23.0,
+          "min_temp": 19.0,
+          "fetch_time": "2025-12-03 02:32:06"
+        },
+        {
+          "date": "2025-12-06",
+          "weather": "多雲時晴",
+          "max_temp": 24.0,
+          "min_temp": 19.0,
+          "fetch_time": "2025-12-03 02:32:06"
+        },
+        {
+          "date": "2025-12-07",
+          "weather": "多雲時晴",
+          "max_temp": 25.0,
+          "min_temp": 20.0,
+          "fetch_time": "2025-12-03 02:32:06"
+        },
+        {
+          "date": "2025-12-08",
+          "weather": "多雲",
+          "max_temp": 26.0,
+          "min_temp": 20.0,
+          "fetch_time": "2025-12-03 02:32:06"
+        },
+        {
+          "date": "2025-12-09",
+          "weather": "多雲",
+          "max_temp": 24.0,
+          "min_temp": 20.0,
+          "fetch_time": "2025-12-03 02:32:06"
+        }
+      ]
+    },
+    {
+      "name": "東部地區",
+      "city": "Hualien",
+      "lat": 23.9871,
+      "lon": 121.6015,
+      "avg_temp": 22.3,
+      "forecast_count": 7,
+      "forecasts": [
+        {
+          "date": "2025-12-03",
+          "weather": "陰天",
+          "max_temp": 22.0,
+          "min_temp": 19.0,
+          "fetch_time": "2025-12-03 02:32:06"
+        },
+        {
+          "date": "2025-12-04",
+          "weather": "陰時多雲短暫雨",
+          "max_temp": 20.0,
+          "min_temp": 18.0,
+          "fetch_time": "2025-12-03 02:32:06"
+        },
+        {
+          "date": "2025-12-05",
+          "weather": "陰時多雲短暫雨",
+          "max_temp": 21.0,
+          "min_temp": 19.0,
+          "fetch_time": "2025-12-03 02:32:06"
+        },
+        {
+          "date": "2025-12-06",
+          "weather": "多雲時陰短暫雨",
+          "max_temp": 23.0,
+          "min_temp": 19.0,
+          "fetch_time": "2025-12-03 02:32:06"
+        },
+        {
+          "date": "2025-12-07",
+          "weather": "多雲短暫雨",
+          "max_temp": 23.0,
+          "min_temp": 19.0,
+          "fetch_time": "2025-12-03 02:32:06"
+        },
+        {
+          "date": "2025-12-08",
+          "weather": "多雲時陰短暫雨",
+          "max_temp": 24.0,
+          "min_temp": 20.0,
+          "fetch_time": "2025-12-03 02:32:06"
+        },
+        {
+          "date": "2025-12-09",
+          "weather": "多雲時陰短暫雨",
+          "max_temp": 23.0,
+          "min_temp": 20.0,
+          "fetch_time": "2025-12-03 02:32:06"
+        }
+      ]
+    }
+  ]
+}
