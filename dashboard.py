@@ -131,13 +131,18 @@ def main():
     
     # Check if map data exists
     if os.path.exists('map_standalone.html'):
+        # Show info about loading time
+        st.info("⏳ Loading interactive map... This may take 5-10 seconds as it loads map libraries and weather data.")
+        
         # Read the standalone map HTML
         with open('map_standalone.html', 'r', encoding='utf-8') as f:
             map_html = f.read()
         
-        # Embed the map in Streamlit using components
+        # Embed the map in Streamlit using components with better height and scrolling
         import streamlit.components.v1 as components
-        components.html(map_html, height=800, scrolling=True)
+        components.html(map_html, height=1000, scrolling=True)
+        
+        st.success("✅ Map loaded! Click on colored circles to see temperature details.")
     else:
         st.warning("Map file not found. Please run `python data_export.py` to generate the map.")
     
